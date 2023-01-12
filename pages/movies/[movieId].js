@@ -9,12 +9,11 @@ import { API_KEY } from "../../constants/common";
 import { MovieDetailPage } from "../../components";
 
 const MovieDetail = ({ id, movie }) => {
+  const media_type = "movie";
 
-    const media_type = 'movie';
-
-    const title = movie.original_title;
-    const backdrop_path = `https://www.themoviedb.org/t/p/original${movie.backdrop_path}`;
-    const overview = movie.overview;
+  const title = movie.original_title;
+  const backdrop_path = `https://www.themoviedb.org/t/p/original${movie.backdrop_path}`;
+  const overview = movie.overview;
 
   return (
     <>
@@ -43,10 +42,8 @@ const MovieDetail = ({ id, movie }) => {
         <meta property="twitter:image" content={backdrop_path} />
       </Head>
       {/* className="mt-[70px] lg:mt-[60px]" */}
-      <section >
-        <MovieDetailPage
-          movieId = {id}
-        />
+      <section>
+        <MovieDetailPage movieId={id} />
       </section>
     </>
   );
@@ -54,7 +51,14 @@ const MovieDetail = ({ id, movie }) => {
 
 export default MovieDetail;
 
-export async function getServerSideProps(context) {
+export async function getStaticPaths() {
+  const paths = Array.from({ length: 999999 }, (_, i) => i + 1).map(
+    (id) => `/movies/${id.toString()}`
+  );
+  return { paths, fallback: false };
+}
+
+export async function getStaticProps(context) {
   const { movieId } = context.params;
 
   const getMovie = await fetch(`${MOVIE_DETAIL}${movieId}?api_key=${API_KEY}`)
