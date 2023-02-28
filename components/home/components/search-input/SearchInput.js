@@ -21,7 +21,7 @@ const SearchInput = () => {
       <div className="container_x_md">
         <div className="flex justify-center items-center">
           <div className="w-full md:w-4/5 lg:w-1/2 flex gap-y-3 flex-col">
-            <h1 className="text-white font-bold">Explore Now</h1>
+            <h1 className="text-white font-heading font-bold">Explore Now</h1>
             <form onSubmit={enterHandler}>
               <TextField
                 fullWidth
