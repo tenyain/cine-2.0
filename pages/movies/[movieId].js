@@ -51,14 +51,7 @@ const MovieDetail = ({ id, movie }) => {
 
 export default MovieDetail;
 
-export async function getStaticPaths() {
-  const paths = Array.from({ length: 999999 }, (_, i) => i + 1).map(
-    (id) => `/movies/${id.toString()}`
-  );
-  return { paths, fallback: false };
-}
-
-export async function getStaticProps(context) {
+export async function getServerSideProps(context) {
   const { movieId } = context.params;
 
   const getMovie = await fetch(`${MOVIE_DETAIL}${movieId}?api_key=${API_KEY}`)
