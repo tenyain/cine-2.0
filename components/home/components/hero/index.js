@@ -34,7 +34,7 @@ const Hero = ({ data, error, loading, slideItemData }) => {
 
   return (
     <section className="">
-      <div className="pt-20 bg-dark h-[700px] lg:h-[700px] flex justify-center items-center">
+      <div className="pt-20 bg-dark min-h-[700px] h-screen lg:h-screen flex justify-center items-center">
         {loading && <CircularProgress />}
 
         {data && <SwiperHero>{slideItems}</SwiperHero>}
