@@ -25,7 +25,7 @@ const SearchInput = () => {
             <form onSubmit={enterHandler}>
               <TextField
                 fullWidth
-                label="Search for movies, series and celebrities"
+                label="Search for movies and series"
                 id="fullWidth"
                 autoComplete="off"
                 value={formValue}
