@@ -65,7 +65,7 @@ const UpcomingMovies = ({ data, loading, error }) => {
                   onClick={handelMaxNum}
                   className="border-primary text-primary capitalize table mx-auto"
                   variant="outlined"
-                  size="small"
+                  size="large"
                 >
                   View More
                 </Button>
@@ -74,7 +74,7 @@ const UpcomingMovies = ({ data, loading, error }) => {
                   <Button
                     className="border-primary text-primary capitalize table mx-auto"
                     variant="outlined"
-                    size="small"
+                    size="large"
                   >
                     View All
                   </Button>
