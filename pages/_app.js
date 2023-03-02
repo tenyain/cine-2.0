@@ -7,6 +7,7 @@ import { StyledEngineProvider } from '@mui/material';
 
 import { Provider } from 'react-redux';
 import { store } from '../modules';
+import App from 'next/app';
 
 /* Major components */
 import NavBar from '../components/navigation';
