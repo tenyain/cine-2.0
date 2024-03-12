@@ -1,4 +1,5 @@
-import Image from "next/image";
+// import Image from "next/image";
+import LazyImage from "../lazy-image/LazyImage";
 import Link from "next/link";
 
 /* constants */
@@ -82,12 +83,12 @@ const SearchHeader = ({ query }) => {
                                 <a>
                                   <div className="flex gap-3 items-center">
                                     {item.poster_path ? (
-                                      <Image
+                                      <LazyImage
                                         width={50}
                                         height={70}
                                         src={`${TMDB_IMG}${TMDB_IMG_RES.poster_sizes[1]}/${item.poster_path}`}
                                         alt={item.name ? item.name : item.title}
-                                        className="flex-[4] object-cover shadow-md rounded"
+                                        style="flex-[4] object-cover shadow-md rounded"
                                       />
                                     ) : (
                                       <div className=" flex rounded bg-gray justify-center items-center text-primary w-[50px] h-[70px]">
@@ -128,12 +129,12 @@ const SearchHeader = ({ query }) => {
                               <a>
                                 <div className="flex gap-3 items-center">
                                   {item.poster_path ? (
-                                    <Image
+                                    <LazyImage
                                       width={50}
                                       height={70}
                                       src={`${TMDB_IMG}${TMDB_IMG_RES.poster_sizes[1]}/${item.poster_path}`}
                                       alt={item.name ? item.name : item.title}
-                                      className="flex-[4] object-cover shadow-md rounded"
+                                      style="flex-[4] object-cover shadow-md rounded"
                                     />
                                   ) : (
                                     <div className=" flex bg-gray rounded justify-center items-center text-primary w-[50px] h-[70px]">

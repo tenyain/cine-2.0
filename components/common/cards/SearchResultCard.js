@@ -1,4 +1,4 @@
-import Image from "next/image";
+import LazyImage from "../lazy-image/LazyImage";
 import { useRouter } from "next/router";
 
 /* Icons */
@@ -25,12 +25,12 @@ const SearchResultCard = ({ id, title, image, name, isSeries }) => {
       <div className="mb-[10px]">
         {image !== null ? (
           <div className="relative overflow-hidden min-w-[150px]  cus-box-shadow min-h-[223px] max-h-[225px] object-cover rounded-md border-2 border-solid border-gray">
-            <Image
-              layout="fill"
-              quality="10"
+            <LazyImage
               src={`https://www.themoviedb.org/t/p/${TMDB_IMG_RES.poster_sizes[3]}/${image}`}
               alt={`${title} poster`}
-              className=""
+              style="object-cover"
+              width={150}
+              height={225}
             />
           </div>
         ) : (
