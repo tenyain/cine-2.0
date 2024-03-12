@@ -12,15 +12,11 @@ import Hook from "./hook.footer";
 
 const Footer = () => {
   const [
-    isHome,
     current,
-    navToggle,
 
     /* actions */
 
     handleNavActivate,
-    navigateToHome,
-    setNavToggle,
   ] = Hook();
 
   return (

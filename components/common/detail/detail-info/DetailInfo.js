@@ -1,11 +1,12 @@
-import Image from "next/image";
+// import Image from "next/image";
+import LazyImage from "../../lazy-image/LazyImage";
 
 /* Hook */
 import Hook from "./hook.detailInfo";
 
 /* Icons */
-import InsertLinkOutlinedIcon from '@mui/icons-material/InsertLinkOutlined';
-import CircularProgress from '@mui/material/CircularProgress';
+import InsertLinkOutlinedIcon from "@mui/icons-material/InsertLinkOutlined";
+import CircularProgress from "@mui/material/CircularProgress";
 import {
   Facebook,
   Imdb,
@@ -101,10 +102,11 @@ const DetailInfo = ({ media_type, id }) => {
                 <div className="text-base flex">
                   {networks.map((item) => {
                     return (
-                      <span className="w-[55px] h-[30px] relative" key={item.name}>
-                        <Image
-                          layout="fill"
-                          quality="10"
+                      <span
+                        className="w-[55px] h-[30px] relative"
+                        key={item.name}
+                      >
+                        <LazyImage
                           src={`https://www.themoviedb.org/t/p/h30${item.logo_path}`}
                           alt={item.name}
                         />

@@ -1,4 +1,5 @@
-import Image from "next/image";
+// import Image from "next/image";
+import LazyImage from "../../../common/lazy-image/LazyImage";
 import Link from "next/link";
 import moment from "moment";
 
@@ -10,10 +11,8 @@ const UpcomingItem = ({ id, title, poster_path, overview, release_date }) => {
       <div className=" flex h-full">
         <div className="flex-[2] md:flex-2">
           <div className="flex relative w-[100px] md:w-auto h-[180px]">
-            <Image
-              layout="fill"
-              quality="10"
-              className="w-[100px] h-full object-cover"
+            <LazyImage
+              style="w-[100px] h-full w-full object-cover"
               src={`https://www.themoviedb.org/t/p/w185/${poster_path}`}
               alt={`${title} poster`}
             />
@@ -34,7 +33,9 @@ const UpcomingItem = ({ id, title, poster_path, overview, release_date }) => {
             </a>
           </Link>
 
-          <p className="line-clamp-3 overflow-ellipsis text-sm text-dark">{overview}</p>
+          <p className="line-clamp-3 overflow-ellipsis text-sm text-dark">
+            {overview}
+          </p>
         </div>
       </div>
     </div>

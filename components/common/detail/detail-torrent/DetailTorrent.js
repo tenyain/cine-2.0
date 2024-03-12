@@ -1,5 +1,6 @@
 import React from "react";
-import Image from "next/image";
+// import Image from "next/image";
+import LazyImage from "../../lazy-image/LazyImage";
 
 /* Hook */
 import Hook from "./hook.detailTorrent";
@@ -21,12 +22,12 @@ const TorrentItem = ({ item }) => {
         </div>
         <div>
           <a href={`magnet:?xt=urn:btih:${item.hash}`}>
-            <Image
+            <LazyImage
               width={20}
               height={20}
               src="/magnet.svg"
               alt="magnet download"
-              className="rotate-180"
+              style="rotate-180"
             />
           </a>
         </div>

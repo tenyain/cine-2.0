@@ -1,6 +1,7 @@
 import useSWR from "swr";
 import Link from "next/link";
-import Image from "next/image";
+// import Image from "next/image";
+import LazyImage from "../../lazy-image/LazyImage";
 
 /* constant */
 import { API_KEY } from "../../../../constants/common";
@@ -33,12 +34,10 @@ const Hook = (media_type, id) => {
             <div>
               {item.backdrop_path ? (
                 <div className="relative w-[225px] min-h-[126.6px] lg:w-[263px] lg:min-h-[148.4px] rounded mb-3 overflow-hidden">
-                  <Image
-                    layout="fill"
-                    quality="10"
-                    className=""
+                  <LazyImage
                     src={`https://www.themoviedb.org/t/p/w533_and_h300_bestv2/${item.backdrop_path}`}
                     alt={item.name}
+                    style="w-full object-cover"
                   />
                 </div>
               ) : (

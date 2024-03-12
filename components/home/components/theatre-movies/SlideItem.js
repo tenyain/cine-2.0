@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import Image from "next/image";
+// import Image from "next/image";
+import LazyImage from "../../../common/lazy-image/LazyImage";
 import Link from "next/link";
 
 /* Hook */
@@ -56,10 +57,8 @@ const SlideItem = ({ id, title, backdrop_path, media_type, overview }) => {
       <div className="relative flex flew-row items-end -mt-[80px] py-8 px-5 md:py-0 md:px-8">
         {poster_path !== undefined && (
           <div className="relative w-[100px] min-w-[100px] min-h-[150px] z-50 md:w-[160px] md:min-w-[160px] md:min-h-[240px] rounded-md">
-            <Image
-              layout="fill"
-              quality="10"
-              className="rounded-md poster-shadow"
+            <LazyImage
+              style="rounded-md poster-shadow w-full object-cover"
               src={poster_path}
               alt={title}
             />

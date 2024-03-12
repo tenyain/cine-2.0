@@ -1,4 +1,4 @@
-import Image from "next/image";
+import LazyImage from "../lazy-image/LazyImage";
 
 /* Icons */
 import PersonIcon from "@mui/icons-material/Person";
@@ -7,14 +7,13 @@ const CrewsCard = ({ image, name, job }) => {
   return (
     <div className="flex items-center bg-wah gap-x-3 max-w-[250px] rounded overflow-hidden select-none cus-box-shadow">
       {image !== null ? (
-        <Image
-        width={60}
-        height={76}
-        className="w-[60px] h-full object-cover"
-        quality='10'
-        src={`https://www.themoviedb.org/t/p/w138_and_h175_face/${image}`}
-        alt={`${name}`}
-      />
+        <LazyImage
+          width={60}
+          height={76}
+          style="h-full object-cover"
+          src={`https://www.themoviedb.org/t/p/w138_and_h175_face/${image}`}
+          alt={`${name}`}
+        />
       ) : (
         <div className=" flex justify-center items-center text-primary w-[60px] h-[75px]">
           <PersonIcon />

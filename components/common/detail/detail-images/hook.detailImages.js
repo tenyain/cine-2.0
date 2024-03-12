@@ -1,5 +1,6 @@
 import useSWR from "swr";
-import Image from "next/image";
+// import Image from "next/image";
+import LazyImage from "../../lazy-image/LazyImage";
 
 /* constants */
 import { API_KEY } from "../../../../constants/common";
@@ -23,11 +24,10 @@ const Hook = (media_type, id) => {
     backdropsList = backdrops.map((item, index) => {
       return (
         <div key={index} className="relative h-[200px] min-w-[350px]">
-          <Image
-            layout="fill"
-            quality="10"
+          <LazyImage
             src={`https://image.tmdb.org/t/p/w500${item.file_path}`}
             alt="backdrops"
+            style="w-full object-cover"
           />
         </div>
       );
